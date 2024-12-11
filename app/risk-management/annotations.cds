@@ -146,6 +146,11 @@ annotate service.Risks with @(
                 Value : prio_code,
                 Criticality : PrioCriticality,
             },
+            {
+                $Type : 'UI.DataFieldForAnnotation',
+                Target : 'bp/@Communication.Contact#contact2',
+                Label : '{i18n>ContactName}',
+            },
         ],
     },
     UI.FieldGroup #MitigationDetails : {
@@ -241,6 +246,16 @@ annotate service.BusinessPartners with @(
         $Type : 'Communication.ContactType',
         fn : FullName,
         title : FullName,
-    }
+    },
+    Communication.Contact #contact1 : {
+        $Type : 'Communication.ContactType',
+        fn : BusinessPartner,
+        title : FullName,
+    },
+    Communication.Contact #contact2 : {
+        $Type : 'Communication.ContactType',
+        fn : FullName,
+        title : FullName,
+    },
 );
 
